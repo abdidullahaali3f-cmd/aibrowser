@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProxyFlow - Secure Browser</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="container">
+    <div id="config-stage" class="stage active">
+      <div class="header">
+        <div class="logo-container">
+          <div class="logo">
+            <svg class="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+        </div>
+        <h1 class="title">ProxyFlow</h1>
+        <p class="subtitle">Secure Browsing with Proxy Protection</p>
+      </div>
 
+      <div class="card">
+        <div class="form-group">
+          <label class="label">Proxy Type</label>
+          <div class="proxy-types">
+            <button class="proxy-btn active" data-type="HTTP">HTTP</button>
+            <button class="proxy-btn" data-type="HTTPS">HTTPS</button>
+            <button class="proxy-btn" data-type="SOCKS4">SOCKS4</button>
+            <button class="proxy-btn" data-type="SOCKS5">SOCKS5</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group flex-2">
+            <label class="label">IP Address</label>
+            <input type="text" id="ip-input" class="input" placeholder="192.168.1.1">
+          </div>
+          <div class="form-group flex-1">
+            <label class="label">Port</label>
+            <input type="text" id="port-input" class="input" placeholder="8080">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="label">Username <span class="optional">(Optional)</span></label>
+            <input type="text" id="username-input" class="input" placeholder="username">
+          </div>
+          <div class="form-group">
+            <label class="label">Password <span class="optional">(Optional)</span></label>
+            <input type="password" id="password-input" class="input" placeholder="••••••••">
+          </div>
+        </div>
+
+        <div id="test-result" class="test-result hidden"></div>
+
+        <div class="button-row">
+          <button id="test-btn" class="btn btn-test">
+            <span class="btn-text">Test Connection</span>
+            <span class="spinner hidden"></span>
+          </button>
+          <button id="connect-btn" class="btn btn-connect" disabled>
+            Launch Browser
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
