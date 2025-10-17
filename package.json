@@ -1,0 +1,44 @@
+{
+  "name": "proxyflow-browser",
+  "version": "1.0.0",
+  "description": "Proxy-enabled browser with beautiful UI",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "keywords": ["proxy", "browser", "electron"],
+  "author": "VARSEL & RAILAW",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "axios": "^1.5.0"
+  },
+  "build": {
+    "appId": "com.proxyflow.browser",
+    "productName": "ProxyFlow",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"]
+    }
+  }
+}
